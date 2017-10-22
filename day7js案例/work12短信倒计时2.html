@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>work12短信倒计时2</title>
+	</head>
+	<body>
+		<input type="button" value="点击发送验证码" id="btn" />
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			var obtn=document.getElementById("btn");
+			var count=5;
+			var timer=null;
+			obtn.onclick=function(){
+				clearInterval(timer);
+				obtn.value=count+"秒后重新发送";
+				timer=setInterval(function(){
+					count--;
+				    obtn.value=count+"秒后重新发送";
+				    if(count==0){
+				    	obtn.value="点击重新发送";
+				    	clearInterval(timer);
+				    	count=5;
+				    }
+				},1000)	
+			}
+		}
+	</script>
+</html>

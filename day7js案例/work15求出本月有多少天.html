@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>work15求出本月有多少天</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		//求出本月有多少天，假设本月就是10月
+		var oDate=new Date();
+		oDate.setMonth(oDate.getMonth()+1);   //11月份；
+		oDate.setDate(0);  //10月的最后一天；
+		alert(oDate.getDate());
+	</script>
+</html>

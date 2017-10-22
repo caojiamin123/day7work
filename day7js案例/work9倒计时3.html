@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>work9倒计时3</title>
+		<style type="text/css">
+			#box{
+				width: 100%;
+				height: 400px;
+				background: black;
+				color: #fff;
+				font-size: 40px;
+				line-height: 400px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">距离2017年12月12日还有：xx天xx时xx分xx秒</div>
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			var obox=document.getElementById("box");
+			var oDate=new Date();
+			oDate.setFullYear(2017,11,12);
+			oDate.setHours(0,0,0,0);
+			//alert(oDate);  //Tue Dec 12 2017 00:00:00
+			//alert(new Date());  //Sun Oct 22 2017 14:33:14
+			
+			function countDown(){
+				//未来时间值减去现在时间的时间值
+				var ms=oDate.getTime()-new Date().getTime();
+				//毫秒转换成秒
+				var osec=parseInt(ms/1000);
+				//秒转换成天
+				var oday=parseInt(osec/86400);
+				//不到一天剩下的秒数
+				osec%=86400;
+				//小时
+				var ohour=parseInt(osec/3600);
+				//不到一小时剩下的秒数
+				osec%=3600;
+				//转换成分钟
+				var omin=parseInt(osec/60);
+				//不到一分钟剩下的秒数
+				osec%=60;
+		    	obox.innerHTML="距离2017年12月12日还有："+oday+"天"+ohour+"时"+omin+"分"+osec+"秒";
+		    }
+			countDown();
+			setInterval(countDown,1000);
+		}
+	</script>
+</html>

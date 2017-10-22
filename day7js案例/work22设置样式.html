@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>work22设置样式</title>
+		<style type="text/css">
+			#box{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			var obox=document.getElementById("box");
+			
+			obox.onclick=function(){
+				var padding=200;
+				
+				with(obox.style){
+					width=padding+"px";
+					height=200+"px";
+					background="green";
+				}
+				/*obox.style.width = 200 + 'px';
+				obox.style.height = 200 + 'px';
+				obox.style.background = 'green';*/	
+			}
+		}
+	</script>
+</html>

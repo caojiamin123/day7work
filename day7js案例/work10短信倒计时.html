@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>work10短信倒计时</title>
+	</head>
+	<body>
+		<input type="button" value="点击发送验证码" id="btn" />
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			var obtn=document.getElementById("btn");
+			var count=5;
+			obtn.onclick=function(){
+				count--;
+				obtn.value=count+"秒后重新发送";
+			}
+		}
+	</script>
+</html>
